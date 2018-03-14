@@ -1,5 +1,8 @@
-# zsh-defaults
+# Cardil's ZSH
+
 Defaults to be used for all my ZSH installs
+
+![Cardil's ZSH screenshot](https://github.com/cardil/zsh-defaults/raw/master/cardil-zsh.png)
 
 ## Installation
 
