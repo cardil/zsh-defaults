@@ -4,9 +4,12 @@ Defaults to be used for all my ZSH installs
 
 ![Cardil's ZSH screenshot](https://github.com/cardil/zsh-defaults/raw/master/cardil-zsh.png)
 
+Terminal: [Terminology](https://launchpad.net/~niko2040/+archive/ubuntu/e19)
+Font: [MesloLGS Nerd Font](http://nerdfonts.com/)
+
 ## Installation
 
-0. install zsh
+0. install zsh: `apt install -y zsh`
 1. Install antigen to `/opt/antigen`:
 ```bash
 sudo git clone https://github.com/zsh-users/antigen.git /opt/antigen
