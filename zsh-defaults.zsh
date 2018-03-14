@@ -20,13 +20,12 @@ antigen bundle gem
 antigen bundle rvm
 antigen bundle bundler
 antigen bundle debian
-antigen bundle emoji-clock
 antigen bundle colored-man-pages
 antigen bundle colorize
-antigen bundle emoji
 antigen bundle sudo
 antigen bundle command-not-found
 antigen bundle asdf
+antigen bundle systemd
 
 # External bundles
 antigen bundle zsh-users/zsh-autosuggestions
