@@ -2,7 +2,7 @@
 
 source /opt/antigen/antigen.zsh
 
-export TERM="xterm-256color" # to enaable all colors used in this theme.
+export TERM="xterm-256color" # to enable all colors used in this theme.
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -10,21 +10,11 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle git-flow
-antigen bundle heroku
-antigen bundle pip
 antigen bundle docker
-antigen bundle vagrant
-antigen bundle mvn
-antigen bundle gradle
-antigen bundle gem
-antigen bundle rvm
-antigen bundle bundler
-antigen bundle debian
+[ -f /etc/debian_version ] && antigen bundle debian
 antigen bundle colored-man-pages
 antigen bundle colorize
 antigen bundle sudo
-antigen bundle command-not-found
-antigen bundle asdf
 antigen bundle systemd
 
 # External bundles

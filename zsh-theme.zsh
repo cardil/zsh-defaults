@@ -2,7 +2,7 @@
 
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir dir_writable root_indicator vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs virtualenv rbenv rvm user host)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs user host)
 
 # Directories
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
