@@ -23,13 +23,13 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 
 # For Hi-Fi terminal
-if tty | grep -q '/dev/pts' && [[ "$FORCE_LOW_FI_ZSH" == "" ]]; then
+if tty | grep -q '/dev/pts' && [[ -z "${FORCE_LOW_FI_ZSH:-}" ]]; then
   # Customize theme
   source /etc/zsh/customize/zsh-theme.zsh
   # Load the theme.
   antigen theme bhilburn/powerlevel9k powerlevel9k
 else
-  antigen theme robbyrussell
+  antigen theme gozilla
 fi
 
 # Tell Antigen that you're done.
