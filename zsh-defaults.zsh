@@ -10,7 +10,6 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle git-flow
-antigen bundle docker
 [ -f /etc/debian_version ] && antigen bundle debian
 antigen bundle colored-man-pages
 antigen bundle colorize
