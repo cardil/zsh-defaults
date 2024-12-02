@@ -4,8 +4,8 @@ Defaults to be used for all my ZSH installs
 
 ![Cardil's ZSH screenshot](https://github.com/cardil/zsh-defaults/raw/master/cardil-zsh.png)
 
-Terminal: [Terminology](https://launchpad.net/~niko2040/+archive/ubuntu/e19)
-Font: [MesloLGS Nerd Font](http://nerdfonts.com/)
+Terminal: [Tilix](https://gnunn1.github.io/tilix-web/)
+Font: [JetBrainsMono Nerd Font](http://nerdfonts.com/)
 
 ## Installation
 
