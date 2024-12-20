@@ -33,3 +33,18 @@ fi
 
 # Tell Antigen that you're done.
 antigen apply
+
+if command -v fzf > /dev/null; then
+  # Set up fzf key bindings and fuzzy completion
+  source <(fzf --zsh)
+  # Preview files with bat
+  export FZF_CTRL_T_OPTS="\
+    --walker file,follow,hidden \
+    --walker-skip .git,node_modules,target \
+    --preview 'bat -n --color=always {}'"
+
+  # Print tree structure in the preview window
+  export FZF_ALT_C_OPTS="\
+    --walker-skip .git,node_modules,target \
+    --preview 'lsd --tree --color=always {}'"
+fi
