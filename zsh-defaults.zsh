@@ -26,7 +26,7 @@ if tty | grep -q '/dev/pts' && [ -z "${FORCE_LOW_FI_ZSH:-}" ]; then
   # Customize theme
   source /etc/zsh/customize/zsh-theme.zsh
   # Load the theme.
-  antigen theme bhilburn/powerlevel9k powerlevel9k
+  antigen theme romkatv/powerlevel10k powerlevel10k
 else
   antigen theme gozilla
 fi
