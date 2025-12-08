@@ -16,7 +16,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Use Nerd Fonts for icons
-typeset -g POWERLEVEL9K_MODE='nerdfont-complete'
+typeset -g POWERLEVEL9K_MODE='nerdfont-v3'
 
 # ----------------------------------------------------------------------------
 # Prompt Elements
@@ -47,9 +47,11 @@ typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
 # Show language versions only in project directories
 typeset -g POWERLEVEL9K_JAVA_VERSION_PROJECT_ONLY=true
 typeset -g POWERLEVEL9K_NODE_VERSION_PROJECT_ONLY=true
-# Virtualenv: show only venv name, not full path or Python version
+# Virtualenv: show directory path instead of name
 typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
 typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=false
+# Display relative path to venv (relative to PWD, or ~/... if outside PWD)
+typeset -g POWERLEVEL9K_VIRTUALENV_CONTENT_EXPANSION='${${VIRTUAL_ENV#$PWD/}/#$HOME/~}'
 # Kubecontext: show only cluster name (shortened) + namespace if not default
 typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_DEFAULT_NAMESPACE=false
 typeset -g POWERLEVEL9K_KUBECONTEXT_SHORTEN_TO=1  # truncate cluster name
