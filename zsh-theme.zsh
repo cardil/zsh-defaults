@@ -39,9 +39,9 @@ typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   command_execution_time
   background_jobs
   virtualenv
-  # go_version
-  # java_version
-  # node_version
+  go_version
+  java_version
+  node_version
   kubecontext
 )
 # Show language versions only in project directories
@@ -72,74 +72,122 @@ typeset -g POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=""
 
-# ----------------------------------------------------------------------------
-# VCS (Git) Colors
-# ----------------------------------------------------------------------------
-# Color codes are xterm-256 palette numbers (0-255)
-# Preview: https://www.ditig.com/publications/256-colors-cheat-sheet
-# Clean repo: green background (color 070)
-typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='070'
-# Untracked files: pink background (color 174)
-typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='174'
-# Modified files: olive text (058) on yellow background (220)
-typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='058'
-typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='220'
-
-# ----------------------------------------------------------------------------
-# Context (user@host) Colors
-# ----------------------------------------------------------------------------
-# Default user: dark gray text (236) on olive background (143)
-typeset -g POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='236'
-typeset -g POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='143'
-# Root user: red text (196) on dark red background (088)
-typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND='196'
-typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='088'
+# ============================================================================
+# True Color Palette (24-bit RGB) - Dracula Theme
+# ============================================================================
+# Official Dracula palette: https://draculatheme.com/contribute
+# Requires terminal with true color support (most modern terminals)
 
 # ----------------------------------------------------------------------------
 # OS Icon
 # ----------------------------------------------------------------------------
-# White background (255), blue foreground
-typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=255
-typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=blue
+typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND='#BD93F9'  # Purple
+typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND='#282A36'  # Background
 
 # ----------------------------------------------------------------------------
-# Directory Colors
+# Directory
 # ----------------------------------------------------------------------------
-# White text (255) on blue background (063)
-typeset -g POWERLEVEL9K_DIR_FOREGROUND=255
-typeset -g POWERLEVEL9K_DIR_BACKGROUND=063
-typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=255
-typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=255
-
-# ----------------------------------------------------------------------------
-# Command Execution Time
-# ----------------------------------------------------------------------------
-# Dark blue text (017) on blue background (063)
-typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='017'
-typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='063'
-# Show for all commands (threshold 0 seconds)
-typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+typeset -g POWERLEVEL9K_DIR_FOREGROUND='#F8F8F2'           # Foreground
+typeset -g POWERLEVEL9K_DIR_BACKGROUND='#5472bb'           # Comment (muted blue)
+typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#F8F8F2'    # Foreground (current dir)
+typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#929dc0' # Dimmed foreground
+typeset -g POWERLEVEL9K_DIR_PATH_SEPARATOR_FOREGROUND='#929dc0'
+typeset -g POWERLEVEL9K_DIR_PATH_SEPARATOR='/'
+# Dim path separator to match shortened directory names
 
 # ----------------------------------------------------------------------------
 # Directory Writable (Lock Icon)
 # ----------------------------------------------------------------------------
-# Yellow/orange text (220) on brown background (136)
-typeset -g POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND='220'
-typeset -g POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND='136'
+typeset -g POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND='#953d00'  # Background
+typeset -g POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND='#ff9625'  # Orange
 
 # ----------------------------------------------------------------------------
 # Root Indicator
 # ----------------------------------------------------------------------------
-# Red text (196) on dark red background (088)
-typeset -g POWERLEVEL9K_ROOT_INDICATOR_FOREGROUND='196'
-typeset -g POWERLEVEL9K_ROOT_INDICATOR_BACKGROUND='088'
+typeset -g POWERLEVEL9K_ROOT_INDICATOR_FOREGROUND='#FF5555'  # Red
+typeset -g POWERLEVEL9K_ROOT_INDICATOR_BACKGROUND='#44475A'  # Current Line
+
+# ----------------------------------------------------------------------------
+# VCS (Git)
+# ----------------------------------------------------------------------------
+# Clean: Cyan - clearly different from warm colors used for dirty states
+typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND='#004900'       # Background
+typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#50FA7B'       # Green
+# Untracked: Pink - new files, attention needed
+typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='#720049'   # Background
+typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#FF79C6'   # Pink
+# Modified: Orange - changes detected, more urgent
+typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='#953d00'    # Background
+typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#ff9625'    # Orange
+
+# ----------------------------------------------------------------------------
+# Status (exit code)
+# ----------------------------------------------------------------------------
+# Enable extended states for pipefail detection
+typeset -g POWERLEVEL9K_STATUS_EXTENDED_STATES=true
+# Show status on success (optional - can hide with false)
+typeset -g POWERLEVEL9K_STATUS_OK=true
+typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND='#50FA7B'       # Green
+typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND='#004900'       # Background
+# Error status
+typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND='#882828'    # Foreground
+typeset -g POWERLEVEL9K_STATUS_ERROR_BACKGROUND='#FF5555'    # Red
+# Pipe status (when any command in pipeline fails)
+typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE=true
+typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND='#882828'
+typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_BACKGROUND='#FF5555'
+
+# ----------------------------------------------------------------------------
+# Command Execution Time
+# ----------------------------------------------------------------------------
+typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='#282A36'  # Background
+typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='#8BE9FD'  # Cyan
+typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0.5  # Show only if >0.5s
+
+# ----------------------------------------------------------------------------
+# Background Jobs
+# ----------------------------------------------------------------------------
+typeset -g POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='#282A36'  # Background
+typeset -g POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND='#BD93F9'  # Purple
+
+# ----------------------------------------------------------------------------
+# Context (user@host)
+# ----------------------------------------------------------------------------
+typeset -g POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='#282A36'  # Background
+typeset -g POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='#50FA7B'  # Green
+typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND='#F8F8F2'     # Foreground
+typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='#FF5555'     # Red
+
+# ----------------------------------------------------------------------------
+# Virtualenv
+# ----------------------------------------------------------------------------
+typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND='#282A36'  # Background
+typeset -g POWERLEVEL9K_VIRTUALENV_BACKGROUND='#F1FA8C'  # Yellow
+
+# ----------------------------------------------------------------------------
+# Kubecontext
+# ----------------------------------------------------------------------------
+typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND='#282A36'  # Background
+typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_BACKGROUND='#8BE9FD'  # Cyan
+
+# ----------------------------------------------------------------------------
+# Language Versions
+# ----------------------------------------------------------------------------
+# Go - Cyan
+typeset -g POWERLEVEL9K_GO_VERSION_FOREGROUND='#282A36'
+typeset -g POWERLEVEL9K_GO_VERSION_BACKGROUND='#8BE9FD'  # Cyan
+# Java - Orange
+typeset -g POWERLEVEL9K_JAVA_VERSION_FOREGROUND='#282A36'
+typeset -g POWERLEVEL9K_JAVA_VERSION_BACKGROUND='#ff9625'  # Orange
+# Node - Green
+typeset -g POWERLEVEL9K_NODE_VERSION_FOREGROUND='#282A36'
+typeset -g POWERLEVEL9K_NODE_VERSION_BACKGROUND='#50FA7B'  # Green
 
 # ----------------------------------------------------------------------------
 # Icons & Separators (Powerline/Nerd Font)
 # ----------------------------------------------------------------------------
 # https://github.com/ryanoasis/powerline-extra-symbols#glyphs
 typeset -g POWERLEVEL9K_ROOT_ICON="\uE780" # 
-typeset -g POWERLEVEL9K_DIR_PATH_SEPARATOR=$'\uE0B5\u200A' #  + hair space
 # Segment separators (rounded style between segments)
 typeset -g POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR='\uE0B4' 
 typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='\uE0B5'
@@ -175,3 +223,4 @@ typeset -g POWERLEVEL9K_PROMPT_CHAR_CONTENT_EXPANSION='%(!.%F{196}#.%F{076}❯)%
 # ----------------------------------------------------------------------------
 # 'verbose' shows warnings if instant prompt has issues
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=verbose
+
