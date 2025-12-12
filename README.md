@@ -4,7 +4,7 @@ Defaults to be used for all my ZSH installs
 
 Uses [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme.
 
-![Cardil's ZSH screenshot](https://github.com/cardil/zsh-defaults/raw/master/cardil-zsh.png)
+![Cardil's ZSH](https://github.com/cardil/zsh-defaults/raw/master/cardil-zsh.gif)
 
 Terminal: [Tilix](https://gnunn1.github.io/tilix-web/)
 Font: [JetBrainsMono Nerd Font](http://nerdfonts.com/)
